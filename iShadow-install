@@ -1,0 +1,132 @@
+#!/bin/bash
+#colors
+reset="\e[0m"
+red="\e[0;31m"
+green="\e[0;32m"
+cyan="\e[0;36m"
+blue="\e[0;34m"
+ylw="\e[1;33m"
+pink="\e[0;35m"
+lg="\e[1;32m"
+chmod +x *
+cd $HOME
+echo -e " $red iShadow For Advanced Users......"
+echo -e "--------------------------------"
+echo ""
+clear
+sleep 2s
+echo -e " $green Installing Commonly Used Package"
+echo -e "--------------------------------"
+echo ""
+apt update -y
+apt upgrade -y
+pkg install git -y
+pkg install wget -y
+pkg install curl -y
+pkg install python3 -y
+pkg install php -y
+pkg install nodejs -y
+pkg install openssh -y
+pkg install ruby
+gem install lolcat
+clear
+#adding source list
+cd /data/data/com.termux/files/usr/etc/apt/sources.list.d
+echo "deb [trusted=yes arch=all] https://beatburner.github.io/ termux extras" > iShadow.list
+# update codes are here
+rm /data/data/com.termux/files/usr/share/backgrounds/xfce/*
+cd $HOME
+cd iShadow
+cp res/* /data/data/com.termux/files/usr/share/backgrounds/xfce
+if [[ -e /data/data/com.termux/files/usr/share/i-icons ]];then
+echo -e "File exist everything is okey"
+else
+cd /data/data/com.termux/files/usr/share/
+mkdir i-icons
+fi
+if [[ -e /data/data/com.termux/files/usr/share/iweb ]];then
+echo -e "File exist everything is okey"
+else
+cd /data/data/com.termux/files/usr/share/
+mkdir iweb
+fi
+cd $HOME
+echo -e " $green Checking everything is fine $red "
+echo -e "--------------------------------"
+sleep 2s
+cd /data/data/com.termux/files/usr/bin
+if [[ -e git ]];
+then
+    echo -e "-------"
+else
+    echo -e "Git is not installed run pkg install git manually"
+fi
+if [[ -e wget ]];
+then
+    echo -e "-------------"
+else
+    echo -e "wget is not installed run pkg install wget"
+fi
+if [[ -e curl ]];
+then
+    echo -e "--------------------"
+else
+    echo -e "curl is not installed run pkg install curl"
+fi
+if [[ -e python3 ]];
+then
+    echo -e "----------------------------"
+else 
+    echo -e "python3 is not installed run pkg install python3"
+fi
+if [[ -e php ]];
+then
+    echo -e "------------------------------------"
+else
+    echo -e "php is not installed run pkg install php"
+fi
+if [[ -e node ]];
+then
+    echo -e "---------------------------------------"
+else
+    echo -e "nodejs is not installed run pkg install nodejs"
+fi
+
+echo -e " $green Installing GUI Termux"
+echo -e "---------------------------------"
+echo ""
+sleep 2s
+pkg install x11-repo
+pkg install tigervnc
+pkg install xfce4
+pkg install xfce4-terminal
+cd $HOME
+vncserver -localhost
+clear
+vncserver -kill :1
+clear
+rm .vnc/xstartup
+cd .vnc
+echo -e "#!/data/data/com.termux/files/usr/bin/sh \n xfce4-session &" > xstartup
+clear
+cd $HOME
+echo -e " $pink Now you can run vncserver -localhost to use termux gui"
+sleep 2s....
+echo -e "Setting up iShadow repo"
+echo -e "-----------------------"
+echo ""
+cd $HOME
+cd iShadow
+# update codes are here
+rm /data/data/com.termux/files/usr/share/backgrounds/xfce/*
+cp res/* /data/data/com.termux/files/usr/share/backgrounds/xfce
+mv ishadow /data/data/com.termux/files/usr/bin
+mv bash.bashrc /data/data/com.termux/files/usr/etc
+mv logo /data/data/com.termux/files/usr/etc
+echo -e " $ylw Installting phpMyAdmin"
+echo -e " -----------------------------"
+sleep 2s
+pkg install mariadb -y
+pkg install phpmyadmin -y
+cd $HOME
+#rm -rf iShadow

@@ -1,0 +1,49 @@
+#!/bin/bash
+#colors
+reset="\e[0m"
+red="\e[0;31m"
+reds="\e[1;31m"
+green="\e[0;32m"
+cyan="\e[0;36m"
+blue="\e[0;34m"
+ylw="\e[1;33m"
+pink="\e[0;35m"
+lg="\e[1;32m"
+
+if [[ $1 == "--version" ]];then
+    echo -e " $ylw version $reds 1.2.0"
+elif [[ $1 == "--help" ]];then
+    echo -e " $ylw ishadow --version $reds to check the version"
+    echo -e " $ylw ishdow --help $reds  usage check the usage"
+    echo -e " $ylw ishadow webserver --start $reds  to start local webserver"
+    echo -e " $ylw ishadow webserver --stop $reds  to stop local webserver"
+    echo -e " $ylw ishadow webserver --add $reds to add a new website "
+    echo -e " $ylw ishadow dbserver --start  $reds  to start database server"
+    echo -e " $ylw ishadow dbserver --stop  $reds  to stop database server"
+elif [[ $1 == "webserver" && $2 == "--add" ]];then
+    echo -e " $cyan YOU ARE GOING TO ADD A WEBSITE"
+    echo -e " $ylw -------------------------------"
+    echo ""
+    read -p 'Enter the website folder path : ' path
+    mv $path /data/data/com.termux/files/usr/share/iweb
+elif [[ $1 == "webserver" && $2 == "--start" ]];then
+    cd /data/data/com.termux/files/usr/share/iweb
+    php -S localhost:4040 > /dev/null 2>&1 &
+    echo -e " $red server started!"
+    echo -e " $ylw http://127.0.0.1:4040"
+elif [[ $1 == "webserver" && $2 == "--stop" ]];then
+    killall -9 php
+elif [[ $1 == "dbserver" && $2 == "--start" ]];then
+    cd /data/data/com.termux/files/usr/share/phpmyadmin
+    php -S localhost:8080 > /dev/null 2>&1 &
+    mysqld --skip-grant-tables --general-log & > /dev/null 2>&1 &
+    echo -e " $red server started!"
+    echo -e " $ylw http://127.0.0.1:8080"
+elif [[ $1 == "dbserver" && $2 == "--stop" ]];then
+    killall -9 mysqld
+    killall -9 php
+else
+    echo -e "command not found"
+fi 
+
+
