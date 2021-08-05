@@ -33,8 +33,6 @@ clear
 #adding source list
 cd /data/data/com.termux/files/usr/etc/apt/sources.list.d
 echo "deb [trusted=yes arch=all] https://beatburner.github.io/ termux extras" > iShadow.list
-# update codes are here
-rm /data/data/com.termux/files/usr/share/backgrounds/xfce/*
 cd $HOME
 cd iShadow
 cp res/* /data/data/com.termux/files/usr/share/backgrounds/xfce
