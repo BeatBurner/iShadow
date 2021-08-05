@@ -129,4 +129,4 @@ sleep 2s
 pkg install mariadb -y
 pkg install phpmyadmin -y
 cd $HOME
-#rm -rf iShadow
+rm -rf iShadow
