@@ -10,7 +10,7 @@ inbuilt intresting tools with shortcuts
 information about iShadow:
 
 [![Project Name](https://img.shields.io/badge/Name-iShadow-orange?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-[![Version](https://img.shields.io/badge/Version-1.0.0-yellow)](https://opensource.org/licenses/)
+[![Version](https://img.shields.io/badge/Version-1.2.0-yellow)](https://opensource.org/licenses/)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-blue)](http://www.gnu.org/licenses/agpl-3.0)
 
   
