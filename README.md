@@ -14,7 +14,7 @@ information about iShadow:
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-blue)](http://www.gnu.org/licenses/agpl-3.0)
 
   
-![Logo](https://github.com/BeatBurner/iShadow/blob/4d095fde5bac7cf099a6379679ca1302ba02d207/res/20210729_124808.jpg)
+![Logo](https://github.com/BeatBurner/iShadow/blob/b9a479e952a0cdfafffc56e459f9d2670416007f/res/20210729_124808.jpg)
 [![Version](https://img.shields.io/badge/Maintainer-Mr%20Rahim-brightgreen?style=for-the-badge&logo=appveyor)](https://opensource.org/licenses/)
    
 ## Features
