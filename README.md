@@ -2,7 +2,7 @@
 
 # iShadow
 
-inbuilt intresting tools with shortcuts and unofficial apt repository
+inbuilt intresting tools with shortcuts and unofficial apt repository by Mr Rahim
 
 
 ## Details
